@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rohan Patil | Portfolio</title>
+    <link rel="stylesheet" href="s.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Animated Ambient Background Blobs -->
+    <div class="bg-blur blob-1"></div>
+    <div class="bg-blur blob-2"></div>
+    <div class="bg-blur blob-3"></div>
+
+    <!-- 1. Sticky Navigation Bar -->
+    <nav class="sticky-navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">RP<span>.</span></a>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#education">Education</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="portfolio-card element-reveal">
+        
+        <!-- Hero Section -->
+        <header class="hero-section">
+            <div class="hero-text">
+                <div class="welcome-badge">
+                    <span class="pulse-dot"></span>
+                    Available for Opportunities
+                </div>
+                <h1>Rohan Patil</h1>
+                <p class="subtitle">Computer Science Engineer & Full-Stack Developer</p>
+            </div>
+            <div class="photo-container">
+                <div class="photo-wrapper">
+                    <img src="C:\Users\User\Pictures\R.P\Snapchat-1864148593.jpg" alt="Rohan Patil">
+                </div>
+            </div>
+        </header>
+
+        <!-- 2. Integrated Profile Badge Card -->
+        <div class="mini-profile-card">
+            <div class="profile-card-glow"></div>
+            <div class="card-avatar">
+                <img src="C:\Users\User\Pictures\R.P\Snapchat-1864148593.jpg" alt="Rohan Patil">
+            </div>
+            <div class="card-info">
+                <h4>Rohan Patil</h4>
+                <p>Ichalkaranji, IN</p>
+                <div class="card-meta-tags">
+                    <span>Final Year B.Tech</span>
+                    <span>MERN Stack</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Section -->
+        <section id="about" class="section section-animate" style="--delay: 1;">
+            <div class="section-header">
+                <span class="section-number">01</span>
+                <h3>About Me</h3>
+            </div>
+            <p class="about-text">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda porro autem vel natus aliquam asperiores ex dolore ratione perspiciatis magnam, numquam dicta! Dolorem corporis itaque repellendus id dolorum, ipsa ducimus ut esse saepe, illo temporibus! Harum ipsa accusamus ex est pariatur quo temporibus?
+            </p>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="section section-animate" style="--delay: 2;">
+            <div class="section-header">
+                <span class="section-number">02</span>
+                <h3>Education</h3>
+            </div>
+            <div class="education-grid">
+                <div class="edu-item">
+                    <div class="edu-meta">
+                        <span class="edu-badge">Diploma</span>
+                    </div>
+                    <h4>Computer Science & Engineering</h4>
+                    <p class="edu-institution">Rajarambapu Institute of Technology (RIT)</p>
+                </div>
+                <div class="edu-item">
+                    <div class="edu-meta">
+                        <span class="edu-badge">Degree</span>
+                    </div>
+                    <h4>Computer Science & Engineering</h4>
+                    <p class="edu-institution">Sharad Institute of Technology College of Engineering (SITCOE)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section section-animate" style="--delay: 3;">
+            <div class="section-header">
+                <span class="section-number">03</span>
+                <h3>Skills & Tech Stack</h3>
+            </div>
+            <ul class="skills-list">
+                <li style="--i: 1;"><span>Python</span></li>
+                <li style="--i: 2;"><span>Java</span></li>
+                <li style="--i: 3;"><span>C++</span></li>
+                <li style="--i: 4;"><span>HTML5</span></li>
+                <li style="--i: 5;"><span>CSS3</span></li>
+            </ul>
+        </section>
+   
+        <!-- Contact Section -->
+        <section id="contact" class="section contact-section section-animate" style="--delay: 4;">
+            <div class="section-header">
+                <span class="section-number">04</span>
+                <h3>Get In Touch</h3>
+            </div>
+            <p class="phone-text">Let's build something scalable together. Reach out directly or connect across platforms:</p>
+            
+            <div class="contact-info-strip">
+                <div class="info-block">
+                    <span class="label">Call Direct</span>
+                    <a href="tel:+911234567890" class="value">+91 1234567890</a>
+                </div>
+            </div>
+
+            <div class="contact-links">
+                <a href="https://www.linkedin.com/in/rohan-patil-123456789/" target="_blank" class="btn btn-linkedin">LinkedIn</a>
+                <a href="https://github.com/rohanpatil" target="_blank" class="btn btn-github">GitHub</a>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- 3. Floating Action Button (Email Me) -->
+    <a href="mailto:rohanpatil@example.com" class="floating-btn" title="Email Me">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+        <span class="floating-btn-text">Email Me</span>
+    </a>
+
+</body>
+</html>
