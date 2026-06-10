@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cute Kids Calculator</title>
+    <link rel="stylesheet" href="s.css">
+</head>
+<body>
+    <audio id="click-sound" src="https://standard-assets.s3.amazonaws.com/click.mp3" preload="auto"></audio>
+    <audio id="clear-sound" src="https://assets.mixkit.co/active_storage/sfx/2019/2019-84.wav" preload="auto"></audio>
+    <audio id="success-sound" src="https://assets.mixkit.co/active_storage/sfx/1435/1435-84.wav" preload="auto"></audio>
+    <audio id="error-sound" src="https://assets.mixkit.co/active_storage/sfx/951/951-84.wav" preload="auto"></audio>
+
+    <div class="calculator-container">
+        
+        <img src="https://media.tenor.com/cLVWwII5-38AAAAm/%E8%9C%A1%E7%AC%94%E5%B0%8F%E6%96%B0.webp" class="surround-gif gif-top-left" alt="Shinchan 1">
+        <img src="https://media.tenor.com/rcKRNgllZrwAAAAm/%E8%9C%A1%E7%AC%94%E5%B0%8F%E6%96%B0%E5%AE%B3%E7%BE%9E.webp" class="surround-gif gif-top-right" alt="Shinchan 2">
+        <img src="https://media.tenor.com/RhLBxB1F9UEAAAAM/shin-chan-longing.gif" class="surround-gif gif-mid-left" alt="Shinchan 3">
+        <img src="https://media.tenor.com/ltI2PWvY5a4AAAAm/%E8%9C%A1%E7%AC%94%E5%B0%8F%E6%96%B0.webp" class="surround-gif gif-bottom-left" alt="Shinchan 4">
+        <img src="https://media.tenor.com/lR1Ex_aLURsAAAAm/shinchan.webp" class="surround-gif gif-bottom-right" alt="Shinchan 5">
+
+        <div class="calculator">
+            <div class="face">
+                <img src="https://media.tenor.com/azoiEHypBKYAAAAm/ketawa-love.webp" alt="Shin-chan Main">
+            </div>
+
+            <input type="text" id="display" readonly>
+
+            <div class="buttons">
+                <button onclick="appendValue('7')">7</button>
+                <button onclick="appendValue('8')">8</button>
+                <button onclick="appendValue('9')">9</button>
+                <button onclick="appendValue('/')">➗</button>
+
+                <button onclick="appendValue('4')">4</button>
+                <button onclick="appendValue('5')">5</button>
+                <button onclick="appendValue('6')">6</button>
+                <button onclick="appendValue('*')">✖</button>
+
+                <button onclick="appendValue('1')">1</button>
+                <button onclick="appendValue('2')">2</button>
+                <button onclick="appendValue('3')">3</button>
+                <button onclick="appendValue('-')">➖</button>
+
+                <button onclick="appendValue('0')">0</button>
+                <button onclick="clearDisplay()">🧹</button>
+                <button onclick="calculate()">=</button>
+                <button onclick="appendValue('+')">➕</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
