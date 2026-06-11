@@ -1,0 +1,406 @@
+/* --- Core Tokens & Variable Configuration --- */
+:root {
+    --bg-color: #f3f4f6;
+    --card-bg: rgba(255, 255, 255, 0.85);
+    --modal-bg: #ffffff;
+    --text-color: #1f2937;
+    --text-muted: #6b7280;
+    --accent-color: #2563eb;
+    --accent-glow: rgba(37, 99, 235, 0.2);
+    --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+    --border-radius: 16px;
+    --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+    --glass-border: rgba(255, 255, 255, 0.6);
+}
+
+[data-theme="dark"] {
+    --bg-color: #0f172a;
+    --card-bg: rgba(30, 41, 59, 0.7);
+    --modal-bg: #1e293b;
+    --text-color: #f8fafc;
+    --text-muted: #94a3b8;
+    --accent-color: #3b82f6;
+    --accent-glow: rgba(59, 130, 246, 0.3);
+    --shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+    --glass-border: rgba(255, 255, 255, 0.05);
+}
+
+/* --- Base Normalization & Entry Animations --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.5s var(--transition-smooth), color 0.5s var(--transition-smooth);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- Premium Navigation Header --- */
+header {
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--glass-border);
+    box-shadow: var(--shadow);
+    padding: 1.25rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    transition: background 0.3s ease;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-container h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--text-color), var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.theme-btn {
+    background: var(--bg-color);
+    border: 1px solid var(--glass-border);
+    color: var(--text-color);
+    cursor: pointer;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+    border-radius: 30px;
+    box-shadow: inset 0 1px 2px rgba(255,255,255,0.1);
+    transition: transform 0.2s var(--transition-smooth), background-color 0.3s, box-shadow 0.3s;
+}
+
+.theme-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px var(--accent-glow);
+}
+
+/* --- Controls/Filters Section Layout --- */
+.controls-section {
+    max-width: 1200px;
+    margin: 2.5rem auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    animation: fadeInUp 0.6s var(--transition-smooth) both;
+}
+
+.search-wrapper {
+    position: relative;
+    flex: 1;
+    min-width: 300px;
+}
+
+.search-icon {
+    position: absolute;
+    left: 1.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    transition: color 0.3s ease;
+}
+
+#search-input, #region-filter {
+    width: 100%;
+    padding: 1rem 1rem 1rem 3.2rem;
+    border: 1px solid var(--glass-border);
+    background-color: var(--card-bg);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: var(--text-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
+#search-input:focus, #region-filter:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 4px var(--accent-glow), var(--shadow);
+}
+
+#region-filter {
+    padding-left: 1.5rem;
+    cursor: pointer;
+    width: 220px;
+}
+
+/* --- Fluid Showcase Grid Configuration --- */
+.grid-container {
+    max-width: 1200px;
+    margin: 0 auto 4rem auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2.5rem;
+}
+
+.loading {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    padding: 4rem 0;
+}
+
+/* --- Tactical Country Display Cards --- */
+.card {
+    background: var(--card-bg);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    animation: fadeInUp 0.6s var(--transition-smooth) both;
+    transition: transform 0.4s var(--transition-smooth), box-shadow 0.4s var(--transition-smooth), border-color 0.4s;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 30px -10px rgba(0,0,0,0.15);
+    border-color: var(--accent-color);
+}
+
+.card-flag {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    transition: transform 0.5s var(--transition-smooth);
+}
+
+.card:hover .card-flag {
+    transform: scale(1.05);
+}
+
+.card-content {
+    padding: 1.5rem;
+    background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.02));
+}
+
+.card-content h3 {
+    margin-bottom: 0.75rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.card:hover .card-content h3 {
+    color: var(--accent-color);
+}
+
+.card-content p {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-muted);
+}
+
+.card-content strong {
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+/* --- High-Fidelity Modal System Animations --- */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(15, 23, 42, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s var(--transition-smooth);
+}
+
+.modal:not(.hidden) {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-content {
+    background-color: var(--modal-bg);
+    border: 1px solid var(--glass-border);
+    padding: 2.5rem;
+    border-radius: 24px;
+    width: 90%;
+    max-width: 850px;
+    max-height: 85vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: var(--shadow);
+    transform: translateY(40px) scale(0.95);
+    transition: transform 0.4s var(--transition-smooth);
+}
+
+.modal:not(.hidden) .modal-content {
+    transform: translateY(0) scale(1);
+}
+
+/* --- Modal Layout Internal Components --- */
+.modal-detail-header {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.modal-flag {
+    width: 260px;
+    height: 160px;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: var(--shadow);
+}
+
+.modal-detail-header h2 {
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.modal-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.stats-and-history {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.stats-and-history p {
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.stats-and-history i {
+    color: var(--accent-color);
+    width: 20px;
+}
+
+.history-box {
+    margin-top: 1rem;
+    padding: 1.25rem;
+    background-color: var(--bg-color);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--glass-border);
+}
+
+.history-box h4 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.history-box p {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: var(--text-muted);
+}
+
+/* --- Embedded Interactive Map Layout --- */
+.map-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.embedded-map {
+    width: 100%;
+    height: 240px;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow);
+}
+
+.visitor-tip-box {
+    background: linear-gradient(135deg, var(--accent-glow), transparent);
+    padding: 1.25rem;
+    border-left: 4px solid var(--accent-color);
+    border-radius: 8px;
+    margin-top: 2rem;
+}
+
+.visitor-tip-box h4 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* --- Action Controls (Close Button Element) --- */
+.close-modal-btn {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    font-size: 2rem;
+    line-height: 1;
+    background: var(--bg-color);
+    border: 1px solid var(--glass-border);
+    color: var(--text-color);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 101;
+    transition: transform 0.2s ease, background-color 0.2s, color 0.2s;
+}
+
+.close-modal-btn:hover {
+    background-color: #ef4444;
+    color: #ffffff;
+    transform: rotate(90deg);
+}

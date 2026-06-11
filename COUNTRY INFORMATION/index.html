@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Nomad | Travel Guide</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <h1><i class="fa-solid fa-earth-americas"></i> GLOBAL ROHAN </h1>
+            <button id="theme-toggle" class="theme-btn">
+                <i class="fa-solid fa-moon"></i> <span>Dark Mode</span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="controls-section">
+            <div class="search-wrapper">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" id="search-input" placeholder="Search for a country to visit...">
+            </div>
+            
+            <div class="filter-wrapper">
+                <select id="region-filter">
+                    <option value="">Filter by Region</option>
+                    <option value="africa">Africa</option>
+                    <option value="americas">Americas</option>
+                    <option value="asia">Asia</option>
+                    <option value="europe">Europe</option>
+                    <option value="oceania">Oceania</option>
+                </select>
+            </div>
+        </section>
+
+        <section id="countries-grid" class="grid-container">
+            <div class="loading">Loading amazing destinations...</div>
+        </section>
+    </main>
+
+    <div id="country-modal" class="modal hidden">
+        <div class="modal-content">
+            <button class="close-modal-btn" id="close-modal">&times;</button>
+            <div id="modal-body">
+                </div>
+        </div>
+    </div>
+
+    <div id="country-modal" class="modal hidden">
+        <div class="modal-content">
+            <button class="close-modal-btn" id="close-modal">&times;</button>
+            <div id="modal-body">
+                </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
