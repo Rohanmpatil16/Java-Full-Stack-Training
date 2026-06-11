@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Paragraph Generator</title>
+</head>
+<body>
+
+    <button onclick="changeText()" id="button">Click Me</button>
+    <p id="text">Hello, World!</p>
+
+    <div id="paragraphContainer"></div>
+
+    <script>
+        const paragraphs = [
+            "JavaScript makes web pages interactive.",
+            "Learning coding is fun and rewarding.",
+            "Practice every day to improve your skills.",
+            "HTML, CSS, and JavaScript are the building blocks of the web.",
+            "Consistency is the key to becoming a great developer."
+        ];
+
+        function changeText() {
+            document.getElementById("text").innerHTML =
+                "You clicked the button!";
+
+            document.getElementById("button").style.background = "blue";
+            document.getElementById("button").style.color = "white";
+
+            const randomIndex = Math.floor(Math.random() * paragraphs.length);
+
+            const p = document.createElement("p");
+            p.innerHTML = paragraphs[randomIndex];
+
+            document.getElementById("paragraphContainer").appendChild(p);
+        }
+    </script>
+
+</body>
+</html>
