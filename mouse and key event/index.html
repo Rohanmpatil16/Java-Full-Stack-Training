@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mouse Events Example</title>
+</head>
+<body>
+
+    <h2>Mouse Events in JavaScript</h2>
+
+    <button
+        onclick="clickEvent()"
+        ondblclick="doubleClickEvent()"
+        onmousedown="mouseDownEvent()"
+        onmouseup="mouseUpEvent()"
+        onmouseover="mouseOverEvent()"
+        onmouseout="mouseOutEvent()">
+        Perform Mouse Events
+    </button>
+
+    <p id="result"></p>
+
+    <script>
+        function clickEvent() {
+            document.getElementById("result").innerHTML =
+                "Single Click Event Performed";
+        }
+
+        function doubleClickEvent() {
+            document.getElementById("result").innerHTML =
+                "Double Click Event Performed";
+        }
+
+        function mouseDownEvent() {
+            document.getElementById("result").innerHTML =
+                "Mouse Button Pressed";
+        }
+
+        function mouseUpEvent() {
+            document.getElementById("result").innerHTML =
+                "Mouse Button Released";
+        }
+
+        function mouseOverEvent() {
+            document.getElementById("result").innerHTML =
+                "Mouse Entered Button Area";
+        }
+
+        function mouseOutEvent() {
+            document.getElementById("result").innerHTML =
+                "Mouse Left Button Area";
+        }
+    </script>
+
+</body>
+</html>
